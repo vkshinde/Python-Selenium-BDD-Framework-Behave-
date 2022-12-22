@@ -1,0 +1,16 @@
+allure-behave
+allure-python-commons
+attrs
+behave
+iniconfig
+packaging
+parse-type
+pluggy
+py
+pyparsing
+pytest
+selenium
+six
+toml
+urllib3
+webdriver-manager

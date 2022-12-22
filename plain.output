@@ -1,0 +1,40 @@
+Feature: Login to The Amazon Account and search products and get their Prices.
+  Background: 
+
+  Scenario: Search the products on Amazon
+    Given Launch the browser ... passed in 0.000s
+    When Open the https://amazon.in website ... passed in 0.000s
+    Then The login portal has been opened ... passed in 0.000s
+    Given User is on the Amazon Website ... passed in 0.000s
+    When When a user enters "Sun Glasses" in the search field, ... passed in 0.000s
+    Then The autocomplete section of the search field displays various keywords related to that keyword ... passed in 0.000s
+    When User selects the first option from the autocomplete section ... passed in 0.000s
+    Then User sees the price and the product details of that product ... passed in 0.000s
+
+  Scenario: Login To Amazon.in
+    Given Launch the browser ... passed in 0.000s
+    When Open the https://amazon.in website ... passed in 0.000s
+    Then The login portal has been opened ... passed in 0.000s
+    Given User is on the Amazon Website ... passed in 0.000s
+    When User enters valid user credentials and clciks the login button ... passed in 0.000s
+    Then User sees personal home page of the amazon.in website ... passed in 0.000s
+
+  Scenario: Login to the account, search the products and add the product to the card.
+    Given Launch the browser ... passed in 0.000s
+    When Open the https://amazon.in website ... passed in 0.000s
+    Then The login portal has been opened ... passed in 0.000s
+    Given User is on the Amazon Website ... passed in 0.000s
+    When User enters valid user credentials and clciks the login button ... passed in 0.000s
+    Then User sees personal home page of the amazon.in website ... passed in 0.000s
+    When When a user enters "Sun Glasses" in the search field, ... passed in 0.000s
+    Then The autocomplete section of the search field displays various keywords related to that keyword ... passed in 0.000s
+    When User selects the first option from the autocomplete section ... passed in 0.000s
+    Then User sees the price and the product details of that product ... passed in 0.000s
+    When User applies filter as per the following data ... passed in 0.000s
+      | Type         | Name         |
+      | Delivery Day | Get It Today |
+      | Prime        | Amazon Prime |
+      | Reviews      | 5            |
+      | Brand        | Fastrack     |
+      | Discount     | 60%          |
+
