@@ -15,8 +15,8 @@ I have created this BDD framework, which includes all of the features and tools 
 The framework is available on GitHub, and the link to that repo is here. 
 
   
-
-This Framework's Features: 
+**
+This Framework's Features: **
 
   
 
