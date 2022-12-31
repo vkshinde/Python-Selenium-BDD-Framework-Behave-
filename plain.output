@@ -1,40 +1,31 @@
-Feature: Login to The Amazon Account and search products and get their Prices.
-  Background: 
+Feature: Login to The flipkart Account and search products and get their Prices.
 
-  Scenario: Search the products on Amazon
-    Given Launch the browser ... passed in 0.000s
-    When Open the https://amazon.in website ... passed in 0.000s
-    Then The login portal has been opened ... passed in 0.000s
-    Given User is on the Amazon Website ... passed in 0.000s
-    When When a user enters "Sun Glasses" in the search field, ... passed in 0.000s
-    Then The autocomplete section of the search field displays various keywords related to that keyword ... passed in 0.000s
-    When User selects the first option from the autocomplete section ... passed in 0.000s
-    Then User sees the price and the product details of that product ... passed in 0.000s
+  Scenario: Login To flipkart.com
+    Given User is on the homepage of the flipkart Website ... passed in 3.605s
+    When User enters valid user credentials as per the "loginDetails" sheet and clciks the login button ... failed in 10.403s
+Traceback (most recent call last):
+  File "/home/vicky/.local/lib/python3.10/site-packages/behave/model.py", line 1329, in run
+    match.run(runner.context)
+  File "/home/vicky/.local/lib/python3.10/site-packages/behave/matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/loginsteps.py", line 48, in step_impl
+    context.login_page.enter_login_details(username)
+  File "/home/vicky/Testing Frameworks/PythonBehaveFrameWork/Python-Selenium-BDD-Framework-Behave-/pages/login_page.py", line 32, in enter_login_details
+    self.input_element(self.TXT_USERNAME, username)
+  File "/home/vicky/Testing Frameworks/PythonBehaveFrameWork/Python-Selenium-BDD-Framework-Behave-/pages/BasePage.py", line 77, in input_element
+    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
+  File "/home/vicky/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
 
-  Scenario: Login To Amazon.in
-    Given Launch the browser ... passed in 0.000s
-    When Open the https://amazon.in website ... passed in 0.000s
-    Then The login portal has been opened ... passed in 0.000s
-    Given User is on the Amazon Website ... passed in 0.000s
-    When User enters valid user credentials and clciks the login button ... passed in 0.000s
-    Then User sees personal home page of the amazon.in website ... passed in 0.000s
+
+      | column Name |
+      | UserName    |
 
   Scenario: Login to the account, search the products and add the product to the card.
-    Given Launch the browser ... passed in 0.000s
-    When Open the https://amazon.in website ... passed in 0.000s
-    Then The login portal has been opened ... passed in 0.000s
-    Given User is on the Amazon Website ... passed in 0.000s
-    When User enters valid user credentials and clciks the login button ... passed in 0.000s
-    Then User sees personal home page of the amazon.in website ... passed in 0.000s
-    When When a user enters "Sun Glasses" in the search field, ... passed in 0.000s
-    Then The autocomplete section of the search field displays various keywords related to that keyword ... passed in 0.000s
-    When User selects the first option from the autocomplete section ... passed in 0.000s
-    Then User sees the price and the product details of that product ... passed in 0.000s
-    When User applies filter as per the following data ... passed in 0.000s
-      | Type         | Name         |
-      | Delivery Day | Get It Today |
-      | Prime        | Amazon Prime |
-      | Reviews      | 5            |
-      | Brand        | Fastrack     |
-      | Discount     | 60%          |
+    Given User is on the homepage of the flipkart Website ... passed in 3.440s
+    When User enters "Sun Glasses" in the search field ... passed in 10.674s
+    Then The autocomplete section of the search field displays various keywords related to that keyword ... passed in 0.377s
+    When User selects the first option from the autocomplete section ... passed in 0.049s
+    Then User sees the price and the product details of first recommended product ... passed in 1.360s
 
